@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FindAI | Launching Soon</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Premium Loading Overlay -->
+  <div id="loading-screen">
+    <div class="loading-content">
+      <div class="logo">FIND AI</div>
+      <div class="subtitle">Preparing Experience</div>
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <div class="progress-text" id="progress-text">0%</div>
+    </div>
+  </div>
+
+  <!-- Sticky Frame Animation Section (Initial Pure Black Theme) -->
+  <div class="animation-section">
+    <div class="canvas-sticky-container">
+      <canvas id="animation-canvas"></canvas>
+      <!-- Interactive Scroll Down Indicator -->
+      <div class="scroll-indicator">
+        <span>Scroll to explore</span>
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Landing Content (About & Coming Soon) -->
+  <div class="content-section">
+    <!-- GPU-Accelerated 3D WebGL Background (Three.js Floating Shapes & Interactive Light) -->
+    <div id="webgl-bg"></div>
+
+    <div class="container">
+      <!-- About Section -->
+      <section class="about-section">
+        <span class="section-label">FindAI Core Ecosystem</span>
+        <h2 class="section-title">THE FUTURE OF AI DISCOVERY</h2>
+        <p class="section-subtitle">FindAI is a futuristic directory where the world's best artificial intelligence tools are curated, compared, and unlocked in a single unified space.</p>
+        
+        <!-- Interactive 3D Bento Grid (4 Cards, Slide/Reveal on Scroll) -->
+        <div class="bento-grid">
+          
+          <div class="bento-item card-3d col-span-2">
+            <div class="card-content">
+              <span class="card-num">01 / DISCOVERY ENGINE</span>
+              <span class="card-icon">⚡</span>
+              <h3>Instant Side-by-Side Comparison</h3>
+              <p>Compare costs, token generation speeds, user reviews, and output accuracy side-by-side. Never waste time switching between multiple tabs or testing models blindly. Get full metrics instantly in a single, clean overview.</p>
+            </div>
+          </div>
+          
+          <div class="bento-item card-3d">
+            <div class="card-content">
+              <span class="card-num">02 / INTERACTION</span>
+              <span class="card-icon">🌀</span>
+              <h3>Infinite 3D Showcase</h3>
+              <p>Explore tools in a beautiful 3D workspace. Hover and slide through categories like writing, coding, image creation, and data modeling in a fluid interface.</p>
+            </div>
+          </div>
+
+          <div class="bento-item card-3d">
+            <div class="card-content">
+              <span class="card-num">03 / TRUST MATRIX</span>
+              <span class="card-icon">🛡️</span>
+              <h3>Verified Capability</h3>
+              <p>Every tool undergoes automatic verification checks to score its API response latency, ease of setup, and overall service stability.</p>
+            </div>
+          </div>
+
+          <div class="bento-item card-3d col-span-2">
+            <div class="card-content">
+              <span class="card-num">04 / METRICS LOG</span>
+              <span class="card-icon">📊</span>
+              <h3>Advanced Index Scoring</h3>
+              <p>We evaluate tools based on proprietary metrics. Discover which generative models offer the highest value per dollar, which APIs scale efficiently under production loads, and how user ratings stack up across categories.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Workflow timeline mapping -->
+        <div class="workflow-section">
+          <h3>How FindAI Works</h3>
+          <div class="timeline">
+            <div class="timeline-step">
+              <div class="step-node">01</div>
+              <h4>Filter & Find</h4>
+              <p>Search over 15+ categorised categories to narrow down the perfect AI tool for your project.</p>
+            </div>
+            <div class="timeline-step">
+              <div class="step-node">02</div>
+              <h4>Contrast Models</h4>
+              <p>Use the sandbox comparison engine to compare benchmarks, cost structures, and ratings.</p>
+            </div>
+            <div class="timeline-step">
+              <div class="step-node">03</div>
+              <h4>Build & Deploy</h4>
+              <p>Extract developer credentials, copy integration code snippets, and build instantly.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Coming Soon Section (Split Grid Layout) -->
+      <section class="coming-soon-section">
+        <div class="coming-soon-grid">
+          
+          <!-- Left Column: Signup waitlist -->
+          <div class="coming-soon-left card-3d">
+            <div class="coming-soon-content">
+              <span class="badge">Join the Revolution</span>
+              <h2 class="main-title">GET EARLY waitlist ACCESS</h2>
+              <p class="desc">Sign up to receive an exclusive developer invitation code, beta access to the 3D sandbox playground, and weekly insights into newly verified AI tools.</p>
+              
+              <form class="signup-form" id="waitlist-form">
+                <div class="input-group">
+                  <input type="email" id="email-input" placeholder="Enter your email address" required />
+                  <button type="submit">Join Waitlist</button>
+                </div>
+              </form>
+              <p class="form-subtext">No spam. Only high-value beta invites and product launches.</p>
+            </div>
+          </div>
+
+          <!-- Right Column: Digital Countdown Clock & System Status -->
+          <div class="coming-soon-right card-3d">
+            <div class="coming-soon-content">
+              <div class="clock-label">ESTIMATED SYSTEM LAUNCH</div>
+              
+              <div class="countdown">
+                <div class="time-block">
+                  <span class="time-val" id="days">00</span>
+                  <span class="time-lbl">Days</span>
+                </div>
+                <div class="time-block">
+                  <span class="time-val" id="hours">00</span>
+                  <span class="time-lbl">Hours</span>
+                </div>
+                <div class="time-block">
+                  <span class="time-val" id="minutes">00</span>
+                  <span class="time-lbl">Mins</span>
+                </div>
+                <div class="time-block">
+                  <span class="time-val" id="seconds">00</span>
+                  <span class="time-lbl">Secs</span>
+                </div>
+              </div>
+
+              <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span class="status-text">BETA SERVERS ONLINE</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Load Three.js from Cloudflare CDN for GPU-accelerated WebGL background particles & 3D models -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
