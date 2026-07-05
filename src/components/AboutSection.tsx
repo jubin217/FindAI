@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Cpu, Layers, Zap, ArrowRight, Database, Code, GitCompare } from 'lucide-react';
+import { Sparkles, Zap, ArrowRight, ShieldCheck, Users, Compass, GitCompare, MessageSquare } from 'lucide-react';
 
 interface AboutSectionProps {
   onNavigateToSubmit: () => void;
@@ -37,18 +37,18 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigateToSubmit }
         {/* About Header */}
         <div className="about-header text-center scroll-animate">
           <div className="about-badge">
-            <Sparkles size={12} />
-            <span>Behind The Directory</span>
+            <Compass size={12} />
+            <span>Our Mission</span>
           </div>
           <h2 className="about-title">
-            Navigating the <span className="text-gradient">AI Revolution</span>
+            Empowering Human Potential in the <span className="text-gradient">AI Era</span>
           </h2>
           <p className="about-subtitle text-secondary">
-            FindAI is a professional, developer-first intelligence platform created to curate, discover, and benchmark the world's most advanced artificial intelligence technologies in seconds.
+            FindAI is a curated, high-integrity discovery catalog designed to help creators, builders, and developers locate the perfect AI engine without the noise of the modern web.
           </p>
         </div>
 
-        {/* 3D Bento Grid Restructure */}
+        {/* 3D Bento Grid - Core Pillars */}
         <div className="bento-grid scroll-animate">
           {/* Card 1: col-span-2 */}
           <div 
@@ -58,11 +58,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigateToSubmit }
           >
             <div className="card-glow-bg" />
             <div className="bento-card-content">
-              <span className="card-num">01 / CURATION ENGINE</span>
-              <span className="card-icon"><Layers size={22} /></span>
-              <h3>Intelligent Directory Categorization</h3>
+              <span className="card-num">01 / CURATION INTEGRITY</span>
+              <span className="card-icon"><ShieldCheck size={22} /></span>
+              <h3>Quality Over Noise</h3>
               <p>
-                Stop digging through unorganized lists. FindAI indexes products across 9 core industries. Leverage advanced tag filters, pricing selectors, and target platform parameters to discover your ideal tool stack in seconds.
+                The AI market is flooded with unverified wrappers and duplicate templates. FindAI manual-checks and filters every listing to ensure you only discover high-value, active, and fully functional tools.
               </p>
               <div className="card-bg-gradient blue-glow" />
             </div>
@@ -76,11 +76,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigateToSubmit }
           >
             <div className="card-glow-bg" />
             <div className="bento-card-content">
-              <span className="card-num">02 / BENCHMARK</span>
+              <span className="card-num">02 / COMPARE MATRIX</span>
               <span className="card-icon"><GitCompare size={22} /></span>
-              <h3>Comparison Sandbox</h3>
+              <h3>Sandbox Comparisons</h3>
               <p>
-                Toggle comparison check nodes to inspect up to three models side-by-side. Benchmark pricing scales, features, ratings, and integration setups instantly.
+                Evaluate pricing structures, core features, ratings, and platforms side-by-side inside our comparison drawer. Choose the right tool with absolute clarity.
               </p>
               <div className="card-bg-gradient silver-glow" />
             </div>
@@ -94,11 +94,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigateToSubmit }
           >
             <div className="card-glow-bg" />
             <div className="bento-card-content">
-              <span className="card-num">03 / TRUST MATRIX</span>
-              <span className="card-icon"><Cpu size={22} /></span>
-              <h3>Verified Submissions</h3>
+              <span className="card-num">03 / ECHO SYSTEM</span>
+              <span className="card-icon"><Users size={22} /></span>
+              <h3>Supporting Indie Builders</h3>
               <p>
-                A fair ecosystem for AI builders. Duplicate submissions are checked, providing publishers with clear validation notices and secure profiles.
+                We provide equal spotlight and visibility for independent indie creators and solo developers, alongside major tech conglomerates.
               </p>
               <div className="card-bg-gradient purple-glow" />
             </div>
@@ -112,68 +112,58 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigateToSubmit }
           >
             <div className="card-glow-bg" />
             <div className="bento-card-content">
-              <span className="card-num">04 / SHOWCASE</span>
+              <span className="card-num">04 / WEBGL ORBIT</span>
               <span className="card-icon"><Sparkles size={22} /></span>
-              <h3>Immersive WebGL Orbit Showcase</h3>
+              <h3>Immersive 3D Space</h3>
               <p>
-                Interact with featured listings in a responsive 3D WebGL sphere. Drag and rotate the orbital core, hover to inspect glass-gilded processor chip details, and view direct integration links immediately.
+                Interact with hand-picked featured listings inside our responsive WebGL orbital core. Rotate, inspect card details dynamically, and access verified links directly.
               </p>
               <div className="card-bg-gradient blue-glow" />
             </div>
           </div>
         </div>
 
-        {/* Developer Integration Timeline */}
+        {/* FindAI Genesis Story Timeline */}
         <div className="workflow-section scroll-animate" style={{ margin: '80px 0' }}>
           <h3 className="section-title" style={{ fontSize: '1.75rem', justifyContent: 'center', borderBottom: 'none', marginBottom: 40 }}>
-            The FindAI Workflow
+            The Genesis of FindAI
           </h3>
           <div className="timeline">
             <div className="timeline-step">
               <div className="step-node">01</div>
-              <h4>Filter & Find</h4>
-              <p>Narrow down search filters across platforms, categories, and rating scores in seconds.</p>
+              <h4>The AI Explosion</h4>
+              <p>Generative intelligence explodes, launching thousands of new engines, models, and apps each week.</p>
             </div>
             <div className="timeline-step">
               <div className="step-node">02</div>
-              <h4>Contrast Models</h4>
-              <p>Activate sandbox comparison slots to evaluate features, value, and integration side-by-side.</p>
+              <h4>The Discovery Crisis</h4>
+              <p>The web is flooded with low-quality clones and unverified wrappers. Builders experience severe search fatigue.</p>
             </div>
             <div className="timeline-step">
               <div className="step-node">03</div>
-              <h4>Deploy Stack</h4>
-              <p>Navigate directly to verified homepage links, check ratings, and integrate APIs.</p>
+              <h4>The Curation Gateway</h4>
+              <p>FindAI is launched as a gateway of trust—offering manually audited, sandboxed, and verified AI directory lists.</p>
             </div>
           </div>
         </div>
 
-        {/* Middle Stats & Stack Visualization */}
+        {/* User-Centric Metrics & Commitments Panel */}
         <div className="about-metrics-layout scroll-animate">
-          {/* Left panel: Animated metrics bars */}
+          {/* Left panel: Platform Impact Metrics */}
           <div 
             className="metrics-panel glass-panel"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
           >
-            <h3 className="panel-title">System Benchmarks</h3>
+            <h3 className="panel-title">Directory Impact Metrics</h3>
             <p className="text-secondary panel-subtitle" style={{ fontSize: '0.85rem', marginBottom: 20 }}>
-              Performance stats showing directory health and indexing efficiency.
+              Live indicators showing our community size and platform usage metrics.
             </p>
             
             <div className="metric-bar-group">
               <div className="metric-info">
-                <span>Database Sync Speed</span>
-                <strong>99.8%</strong>
-              </div>
-              <div className="progress-track">
-                <div className="progress-fill progress-fill-99" />
-              </div>
-            </div>
-
-            <div className="metric-bar-group">
-              <div className="metric-info">
-                <span>Verification Accuracy</span>
-                <strong>100%</strong>
+                <span>Active AI Engines Indexed</span>
+                <strong>5,190+</strong>
               </div>
               <div className="progress-track">
                 <div className="progress-fill progress-fill-100" />
@@ -182,8 +172,18 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigateToSubmit }
 
             <div className="metric-bar-group">
               <div className="metric-info">
-                <span>API Query Latency</span>
-                <strong>&lt; 45ms</strong>
+                <span>User Trust Rating</span>
+                <strong>4.9 / 5.0</strong>
+              </div>
+              <div className="progress-track">
+                <div className="progress-fill progress-fill-99" />
+              </div>
+            </div>
+
+            <div className="metric-bar-group">
+              <div className="metric-info">
+                <span>Sandboxed Comparison Sessions</span>
+                <strong>25,400+</strong>
               </div>
               <div className="progress-track">
                 <div className="progress-fill progress-fill-92" />
@@ -191,45 +191,58 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigateToSubmit }
             </div>
           </div>
 
-          {/* Right panel: Modern Tech Stack grid */}
+          {/* Right panel: Our Core Commitments */}
           <div 
             className="stack-panel glass-panel"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
           >
-            <h3 className="panel-title">Technical Architecture</h3>
+            <h3 className="panel-title">Our Core Commitments</h3>
             <p className="text-secondary panel-subtitle" style={{ fontSize: '0.85rem', marginBottom: 24 }}>
-              The high-performance framework powering the FindAI directory.
+              The foundational values guiding the development of the FindAI catalog.
             </p>
 
             <div className="tech-stack-grid">
               <div className="tech-item">
                 <div className="tech-icon-circle">
-                  <Code size={18} />
+                  <ShieldCheck size={18} />
                 </div>
-                <span>React 19 & TS</span>
+                <div>
+                  <strong style={{ display: 'block', fontSize: '0.9rem' }}>Absolute Quality</strong>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', marginTop: 2 }}>No spam or unverified wrappers.</span>
+                </div>
               </div>
               
               <div className="tech-item">
                 <div className="tech-icon-circle">
-                  <Database size={18} />
-                </div>
-                <span>Supabase Real DB</span>
-              </div>
-
-              <div className="tech-item">
-                <div className="tech-icon-circle">
                   <Zap size={18} />
                 </div>
-                <span>Vite Bundler</span>
+                <div>
+                  <strong style={{ display: 'block', fontSize: '0.9rem' }}>Data Integrity</strong>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', marginTop: 2 }}>Automatic daily sync and crawler updates.</span>
+                </div>
               </div>
 
               <div className="tech-item">
                 <div className="tech-icon-circle">
-                  <Layers size={18} />
+                  <Users size={18} />
                 </div>
-                <span>RLS Security</span>
+                <div>
+                  <strong style={{ display: 'block', fontSize: '0.9rem' }}>Indie Spotlights</strong>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', marginTop: 2 }}>Equal exposure for solo developers.</span>
+                </div>
               </div>
+
+              <div className="tech-item">
+                <div className="tech-icon-circle">
+                  <MessageSquare size={18} />
+                </div>
+                <div>
+                  <strong style={{ display: 'block', fontSize: '0.9rem' }}>Verified Reviews</strong>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', marginTop: 2 }}>Feedback written by actual creators.</span>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -242,9 +255,9 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigateToSubmit }
           style={{ marginTop: 60 }}
         >
           <div className="cta-glow" />
-          <h3 className="cta-title">Are you an AI Builder?</h3>
+          <h3 className="cta-title">Are you building the future?</h3>
           <p className="cta-desc text-secondary">
-            Get your AI product discovered by thousands of developers, researchers, and early adopters instantly.
+            Submit your AI product today to get discovered by our active community of builders, researchers, and early adopters.
           </p>
           <button className="btn-primary cta-btn btn-3d" onClick={onNavigateToSubmit}>
             <span>Submit Your AI Tool Now</span>
