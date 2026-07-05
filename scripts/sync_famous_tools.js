@@ -1,3 +1,8 @@
+// Polyfill global WebSocket for older Node versions (< 22) since Supabase initializes realtime client internally
+if (typeof globalThis.WebSocket === 'undefined') {
+  globalThis.WebSocket = class {};
+}
+
 import fs from 'fs';
 import path from 'path';
 import https from 'https';
