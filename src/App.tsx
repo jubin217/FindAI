@@ -319,14 +319,14 @@ function App() {
 
   // Generate items for the 3D InfiniteMenu from the tools database
   const featuredMenuItems = useMemo(() => {
-    // Select popular or well-known tools from various categories
-    const recognizableIds = ['chatgpt', 'claude', 'midjourney', 'stable-diffusion', 'github-copilot', 'v0', 'runway', 'sora', 'elevenlabs', 'cursor', 'perplexity'];
-    let showcaseList = tools.filter(t => t.approved && recognizableIds.includes(t.id));
+    // Select approved tools from the active filtered catalog list matching active search & category tags
+    let showcaseList = filteredTools.filter(t => t.approved);
     
-    // If not enough matching tools found, fall back to top clicked tools
-    if (showcaseList.length < 5) {
-      showcaseList = tools.filter(t => t.approved).sort((a, b) => (b.clicks || 0) - (a.clicks || 0)).slice(0, 10);
-    }
+    // Sort by popularity (clicks or rating) to display the best tools prominently
+    showcaseList = [...showcaseList].sort((a, b) => (b.clicks || 0) - (a.clicks || 0));
+
+    // Limit to 45 items to prevent browser lag and preserve high WebGL rendering performance
+    showcaseList = showcaseList.slice(0, 45);
     
     if (showcaseList.length === 0) {
       return [];
@@ -356,7 +356,7 @@ function App() {
         category: tool.category
       };
     });
-  }, [tools, theme]);
+  }, [filteredTools, theme]);
 
   // Sync scroll animations on changes to the catalog items list
   useScrollAnimation([
