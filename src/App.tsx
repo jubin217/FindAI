@@ -193,6 +193,39 @@ function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
+      const path = window.location.pathname;
+
+      // 1. Intercept clean paths (for SEO crawler entry compatibility)
+      if (path.startsWith('/category/')) {
+        const slug = path.replace('/category/', '');
+        const mappedCat = slugToCategory(slug, CATEGORIES);
+        setSelectedCategory(mappedCat);
+        setCurrentView('home');
+        window.history.replaceState(null, '', '/#/category/' + slug);
+        return;
+      } else if (path.startsWith('/tool/')) {
+        const toolId = path.replace('/tool/', '');
+        const targetTool = tools.find((t) => t.id === toolId);
+        if (targetTool) {
+          setSelectedDetailTool(targetTool);
+        }
+        window.history.replaceState(null, '', '/');
+        return;
+      } else if (path === '/submit-tool') {
+        setCurrentView('submit-tool');
+        window.history.replaceState(null, '', '/#/submit-tool');
+        return;
+      } else if (path === '/profile') {
+        setCurrentView('profile');
+        window.history.replaceState(null, '', '/#/profile');
+        return;
+      } else if (path === '/admin') {
+        setCurrentView('admin');
+        window.history.replaceState(null, '', '/#/admin');
+        return;
+      }
+
+      // 2. Fall back to standard Hash Routing
       if (hash === '#/admin') {
         setCurrentView('admin');
       } else if (hash === '#/profile') {

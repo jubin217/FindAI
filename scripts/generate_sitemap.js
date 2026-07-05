@@ -19,7 +19,7 @@ function generateSitemap() {
   });
   
   urls.push({
-    loc: 'https://findai.store/#/submit-tool',
+    loc: 'https://findai.store/submit-tool',
     lastmod: today,
     changefreq: 'monthly',
     priority: '0.6'
@@ -34,7 +34,7 @@ function generateSitemap() {
   categories.forEach(cat => {
     const slug = cat.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
     urls.push({
-      loc: `https://findai.store/#/category/${slug}`,
+      loc: `https://findai.store/category/${slug}`,
       lastmod: today,
       changefreq: 'daily',
       priority: '0.9'
@@ -91,7 +91,7 @@ function generateSitemap() {
                 // Escape special characters in URLs if necessary (IDs should be alphanumeric/hyphens)
                 const escapedId = encodeURIComponent(tool.id);
                 urls.push({
-                  loc: `https://findai.store/#/tool/${escapedId}`,
+                  loc: `https://findai.store/tool/${escapedId}`,
                   lastmod: today,
                   changefreq: 'weekly',
                   priority: '0.8'

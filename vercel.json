@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/category/:slug", "destination": "/" },
+    { "source": "/tool/:id", "destination": "/" },
+    { "source": "/submit-tool", "destination": "/" },
+    { "source": "/profile", "destination": "/" },
+    { "source": "/admin", "destination": "/" },
+    { "source": "/((?!assets/|favicon.svg|icons.svg|robots.txt|sitemap.xml|BingSiteAuth.xml|logoonly-removebg.webp|cracked_cement_texture.webp).*)", "destination": "/" }
+  ]
+}
