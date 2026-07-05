@@ -71,7 +71,7 @@ const requestData = JSON.stringify({
 });
 
 const options = {
-  hostname: 'api.indexnow.org',
+  hostname: 'www.bing.com',
   path: '/IndexNow',
   method: 'POST',
   headers: {
