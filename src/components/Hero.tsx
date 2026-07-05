@@ -137,7 +137,7 @@ export const Hero: React.FC<HeroProps> = ({
 
           {/* Autocomplete suggestion popover */}
           {showSuggestions && suggestions.length > 0 && (
-            <div className="search-suggestions">
+            <div className="search-suggestions" data-lenis-prevent="true">
               {suggestions.map((tool) => (
                 <div
                   key={tool.id}
