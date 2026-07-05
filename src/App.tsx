@@ -130,6 +130,63 @@ function App() {
     if (metaDescription) {
       metaDescription.setAttribute('content', description);
     }
+
+    // Build dynamic JSON-LD Schema for GEO/SEO Authority search indexing
+    let schemaData: any = null;
+
+    if (selectedDetailTool) {
+      schemaData = {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": selectedDetailTool.name,
+        "description": selectedDetailTool.tagline || selectedDetailTool.description.slice(0, 150),
+        "category": selectedDetailTool.category,
+        "offers": {
+          "@type": "Offer",
+          "price": selectedDetailTool.pricingType === 'Free' ? '0' : '9.99',
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": selectedDetailTool.rating || 4.5,
+          "reviewCount": selectedDetailTool.reviewCount || 1,
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      };
+    } else if (selectedCategory && selectedCategory !== 'All') {
+      schemaData = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": `Best AI Tools for ${selectedCategory} (2026) | FindAI`,
+        "url": `https://findai.store/category/${categoryToSlug(selectedCategory)}`,
+        "description": description
+      };
+    } else {
+      schemaData = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "FindAI",
+        "url": "https://findai.store/",
+        "description": description,
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://findai.store/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      };
+    }
+
+    // Inject/Update structured script in document head
+    let scriptTag = document.getElementById('seo-schema');
+    if (!scriptTag) {
+      scriptTag = document.createElement('script');
+      scriptTag.id = 'seo-schema';
+      scriptTag.setAttribute('type', 'application/ld+json');
+      document.head.appendChild(scriptTag);
+    }
+    scriptTag.textContent = JSON.stringify(schemaData, null, 2);
   }, [currentView, selectedCategory, selectedDetailTool]);
 
   const toggleTheme = () => {
