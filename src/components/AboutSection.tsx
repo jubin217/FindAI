@@ -131,18 +131,24 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigateToSubmit }
           <div className="timeline">
             <div className="timeline-step">
               <div className="step-node">01</div>
-              <h4>The AI Explosion</h4>
-              <p>Generative intelligence explodes, launching thousands of new engines, models, and apps each week.</p>
+              <div className="timeline-text-content">
+                <h4>The AI Explosion</h4>
+                <p>Generative intelligence explodes, launching thousands of new engines, models, and apps each week.</p>
+              </div>
             </div>
             <div className="timeline-step">
               <div className="step-node">02</div>
-              <h4>The Discovery Crisis</h4>
-              <p>The web is flooded with low-quality clones and unverified wrappers. Builders experience severe search fatigue.</p>
+              <div className="timeline-text-content">
+                <h4>The Discovery Crisis</h4>
+                <p>The web is flooded with low-quality clones and unverified wrappers. Builders experience severe search fatigue.</p>
+              </div>
             </div>
             <div className="timeline-step">
               <div className="step-node">03</div>
-              <h4>The Curation Gateway</h4>
-              <p>FindAI is launched as a gateway of trust—offering manually audited, sandboxed, and verified AI directory lists.</p>
+              <div className="timeline-text-content">
+                <h4>The Curation Gateway</h4>
+                <p>FindAI is launched as a gateway of trust—offering manually audited, sandboxed, and verified AI directory lists.</p>
+              </div>
             </div>
           </div>
         </div>

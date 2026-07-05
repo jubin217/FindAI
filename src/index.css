@@ -3220,3 +3220,20 @@ button {
 :root[data-theme="light"] .suggestion-tagline {
   color: var(--text-muted) !important;
 }
+
+/* --- ABOUT SECTION ADDITIONAL RESPONSIVE OVERRIDES --- */
+@media (max-width: 600px) {
+  .about-title {
+    font-size: 2.2rem !important;
+  }
+  .bento-item {
+    padding: 24px 20px !important;
+  }
+  .tech-stack-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .tech-item {
+    padding: 12px 14px !important;
+  }
+}
