@@ -25,6 +25,22 @@ function generateSitemap() {
     priority: '0.6'
   });
 
+  // Category Landing Pages (SEO High Priority)
+  const categories = [
+    'Writing', 'Coding', 'Image Generation', 'Video Editing', 'Marketing',
+    'Productivity', 'Education', 'Customer Support', 'Data Analytics'
+  ];
+
+  categories.forEach(cat => {
+    const slug = cat.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    urls.push({
+      loc: `https://findai.store/#/category/${slug}`,
+      lastmod: today,
+      changefreq: 'daily',
+      priority: '0.9'
+    });
+  });
+
   // Extract tools from tools.ts
   if (fs.existsSync(toolsFilePath)) {
     try {

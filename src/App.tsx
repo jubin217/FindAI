@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, lazy, Suspense } from 'react';
 import { 
   Filter, 
   RotateCcw, 
@@ -14,19 +14,48 @@ import InfiniteMenu, { generateCardImage } from './components/InfiniteMenu';
 import { ToolDetailsModal } from './components/ToolDetailsModal';
 import { ComparisonDrawer } from './components/ComparisonDrawer';
 import { ComparisonModal } from './components/ComparisonModal';
-import { SubmitToolView } from './components/SubmitToolView';
-import { ProfileView } from './components/ProfileView';
 import { AboutSection } from './components/AboutSection';
 import { PrivacyModal } from './components/PrivacyModal';
 import { TermsModal } from './components/TermsModal';
 import { AttributionModal } from './components/AttributionModal';
 import { AuthModal } from './components/AuthModal';
 import { ConfirmModal } from './components/ConfirmModal';
-import { AdminReviewView } from './components/AdminReviewView';
 import { supabase, isSupabaseConfigured } from './lib/supabaseClient';
 import type { AITool } from './data/tools';
 import { db } from './lib/supabaseClient';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
+
+// Lazy load secondary views to optimize initial bundle size
+const SubmitToolView = lazy(() => import('./components/SubmitToolView').then(m => ({ default: m.SubmitToolView })));
+const ProfileView = lazy(() => import('./components/ProfileView').then(m => ({ default: m.ProfileView })));
+const AdminReviewView = lazy(() => import('./components/AdminReviewView').then(m => ({ default: m.AdminReviewView })));
+
+// Helper functions for category slugs mapping
+const CATEGORIES = [
+  'Writing', 'Coding', 'Image Generation', 'Video Editing', 'Marketing',
+  'Productivity', 'Education', 'Customer Support', 'Data Analytics'
+];
+
+const PRICING_OPTIONS = ['Free', 'Freemium', 'Free Trial', 'Paid'];
+const PLATFORM_OPTIONS = ['Web', 'macOS', 'Windows', 'Linux', 'iOS', 'Android', 'Chrome Extension'];
+
+const categoryToSlug = (cat: string) => {
+  return cat.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+};
+
+const slugToCategory = (slug: string, categories: string[]) => {
+  const normalized = slug.toLowerCase();
+  if (normalized === 'all') return 'All';
+  const found = categories.find(cat => categoryToSlug(cat) === normalized);
+  return found || 'All';
+};
+
+// Glassmorphic spinner fallback layout for Suspense boundaries
+const PageLoader = () => (
+  <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '60vh' }}>
+    <div className="loader" style={{ width: 40, height: 40, border: '3px solid rgba(79, 70, 229, 0.1)', borderTopColor: 'var(--primary)', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
+  </div>
+);
 
 function App() {
   // Core state lists
@@ -71,6 +100,37 @@ function App() {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
   }, [theme]);
+
+  // Dynamic SEO Meta tags and Titles based on navigation context
+  useEffect(() => {
+    let title = 'FindAI - The Best AI Tools Directory & Comparison Catalog (2026)';
+    let description = 'Discover and compare the best artificial intelligence tools, software, and models. Filter by pricing types, platforms, ratings, and industries.';
+
+    if (currentView === 'submit-tool') {
+      title = 'Submit Your AI Product | FindAI';
+      description = 'List your generative AI tool, API, or application on FindAI. Get discovered by thousands of developers, builders, and early adopters.';
+    } else if (currentView === 'profile') {
+      title = 'Developer Profile & Submissions | FindAI';
+      description = 'Manage your submitted artificial intelligence applications, check approval status, and review platform feedback.';
+    } else if (currentView === 'admin') {
+      title = 'Review Dashboard & Content Moderation | FindAI';
+      description = 'Moderator command center for reviewing pending applications and managing directory integrity.';
+    } else if (selectedDetailTool) {
+      title = `${selectedDetailTool.name} – Features, Pricing & Reviews | FindAI`;
+      description = `${selectedDetailTool.name}: ${selectedDetailTool.tagline || selectedDetailTool.description.slice(0, 150)}`;
+    } else if (selectedCategory && selectedCategory !== 'All') {
+      title = `Best AI Tools for ${selectedCategory} (2026) | FindAI`;
+      description = `Explore and compare the highest-rated AI tools for ${selectedCategory}. Read reviews, check pricing models (Free, Freemium, Paid), and filter by target platform.`;
+    }
+
+    document.title = title;
+    
+    // Update Meta Description dynamically for search engine crawlers
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', description);
+    }
+  }, [currentView, selectedCategory, selectedDetailTool]);
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
@@ -146,6 +206,11 @@ function App() {
           setSelectedDetailTool(targetTool);
         }
         window.location.hash = ''; // reset hash back to home view cleanly
+      } else if (hash.startsWith('#/category/')) {
+        const slug = hash.replace('#/category/', '');
+        const mappedCat = slugToCategory(slug, CATEGORIES);
+        setSelectedCategory(mappedCat);
+        setCurrentView('home');
       } else if (hash === '' || hash === '#/') {
         setCurrentView('home');
       }
@@ -162,14 +227,10 @@ function App() {
 
 
 
-  // Static options lists for sidebar filters
-  const categories = [
-    'Writing', 'Coding', 'Image Generation', 'Video Editing', 'Marketing',
-    'Productivity', 'Education', 'Customer Support', 'Data Analytics'
-  ];
-
-  const pricingOptions = ['Free', 'Freemium', 'Free Trial', 'Paid'];
-  const platformOptions = ['Web', 'macOS', 'Windows', 'Linux', 'iOS', 'Android', 'Chrome Extension'];
+  // Static options lists for sidebar filters linked to global constants
+  const categories = CATEGORIES;
+  const pricingOptions = PRICING_OPTIONS;
+  const platformOptions = PLATFORM_OPTIONS;
 
   // Filter & Sort computation
   const filteredTools = useMemo(() => {
@@ -434,7 +495,7 @@ function App() {
             <div className="category-badges-container scale-up animated">
               <button
                 className={`category-badge ${selectedCategory === 'All' ? 'active' : ''}`}
-                onClick={() => setSelectedCategory('All')}
+                onClick={() => { window.location.hash = '#/'; }}
               >
                 All Products
               </button>
@@ -442,7 +503,7 @@ function App() {
                 <button
                   key={cat}
                   className={`category-badge ${selectedCategory === cat ? 'active' : ''}`}
-                  onClick={() => setSelectedCategory(cat)}
+                  onClick={() => { window.location.hash = `#/category/${categoryToSlug(cat)}`; }}
                 >
                   {cat}
                 </button>
@@ -713,43 +774,43 @@ function App() {
         </>
       )}
 
-      {/* 2. Developer Submission View */}
-      {currentView === 'submit-tool' && (
-        <SubmitToolView
-          user={user}
-          onNavigateHome={() => {
-            if (window.location.hash.includes('from=profile')) {
-              window.location.hash = '#/profile';
-            } else {
-              window.location.hash = '';
-            }
-          }}
-          onAuthRequired={() => {
-            setPendingRedirect('submit-tool');
-            setIsAuthModalOpen(true);
-          }}
-          fromProfile={window.location.hash.includes('from=profile')}
-        />
-      )}
+      {/* 2. Developer Submission, Profile, and Admin views with lazy dynamic loading boundaries */}
+      <Suspense fallback={<PageLoader />}>
+        {currentView === 'submit-tool' && (
+          <SubmitToolView
+            user={user}
+            onNavigateHome={() => {
+              if (window.location.hash.includes('from=profile')) {
+                window.location.hash = '#/profile';
+              } else {
+                window.location.hash = '';
+              }
+            }}
+            onAuthRequired={() => {
+              setPendingRedirect('submit-tool');
+              setIsAuthModalOpen(true);
+            }}
+            fromProfile={window.location.hash.includes('from=profile')}
+          />
+        )}
 
-      {/* 3. Developer Profile View */}
-      {currentView === 'profile' && (
-        <ProfileView
-          user={user}
-          onNavigateHome={() => { window.location.hash = ''; }}
-          onNavigateToSubmit={() => { window.location.hash = '#/submit-tool?from=profile'; }}
-        />
-      )}
+        {currentView === 'profile' && (
+          <ProfileView
+            user={user}
+            onNavigateHome={() => { window.location.hash = ''; }}
+            onNavigateToSubmit={() => { window.location.hash = '#/submit-tool?from=profile'; }}
+          />
+        )}
 
-      {/* 4. Administrator Moderation Review View */}
-      {currentView === 'admin' && (
-        <AdminReviewView
-          user={user}
-          tools={tools}
-          onRefresh={fetchToolsData}
-          onNavigateHome={() => { window.location.hash = ''; }}
-        />
-      )}
+        {currentView === 'admin' && (
+          <AdminReviewView
+            user={user}
+            tools={tools}
+            onRefresh={fetchToolsData}
+            onNavigateHome={() => { window.location.hash = ''; }}
+          />
+        )}
+      </Suspense>
 
       {/* Global Authentication Modal */}
       {isAuthModalOpen && (
@@ -840,10 +901,10 @@ function App() {
             <div className="footer-links-col">
               <h4>Directory</h4>
               <ul>
-                <li><a href="#" onClick={(e) => { e.preventDefault(); setSelectedCategory('Coding'); window.location.hash = ''; window.scrollTo(0, 500); }}>Coding Tools</a></li>
-                <li><a href="#" onClick={(e) => { e.preventDefault(); setSelectedCategory('Writing'); window.location.hash = ''; window.scrollTo(0, 500); }}>Writing Assistants</a></li>
-                <li><a href="#" onClick={(e) => { e.preventDefault(); setSelectedCategory('Image Generation'); window.location.hash = ''; window.scrollTo(0, 500); }}>Image Generators</a></li>
-                <li><a href="#" onClick={(e) => { e.preventDefault(); setSelectedCategory('Video Editing'); window.location.hash = ''; window.scrollTo(0, 500); }}>Video Editors</a></li>
+                <li><a href="#/category/coding" onClick={() => window.scrollTo(0, 500)}>Coding Tools</a></li>
+                <li><a href="#/category/writing" onClick={() => window.scrollTo(0, 500)}>Writing Assistants</a></li>
+                <li><a href="#/category/image-generation" onClick={() => window.scrollTo(0, 500)}>Image Generators</a></li>
+                <li><a href="#/category/video-editing" onClick={() => window.scrollTo(0, 500)}>Video Editors</a></li>
               </ul>
             </div>
 
