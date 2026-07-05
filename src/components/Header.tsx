@@ -152,7 +152,7 @@ export const Header: React.FC<HeaderProps> = ({
                   height: 36,
                   borderRadius: '50%',
                   background: 'linear-gradient(135deg, var(--primary), var(--secondary))',
-                  color: 'white',
+                  color: 'var(--text-primary)',
                   fontSize: '0.85rem',
                   fontWeight: 700,
                   display: 'flex',

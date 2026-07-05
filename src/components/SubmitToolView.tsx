@@ -124,7 +124,7 @@ export const SubmitToolView: React.FC<SubmitToolViewProps> = ({
               style={{
                 background: 'rgba(255, 255, 255, 0.02)',
                 border: '1px solid var(--glass-border)',
-                color: 'white',
+                color: 'var(--text-primary)',
                 padding: '10px 16px',
                 borderRadius: '8px',
                 cursor: 'pointer',
@@ -186,7 +186,7 @@ export const SubmitToolView: React.FC<SubmitToolViewProps> = ({
                 style={{
                   background: 'rgba(255, 255, 255, 0.02)',
                   border: '1px solid var(--glass-border)',
-                  color: 'white',
+                  color: 'var(--text-primary)',
                   padding: '10px 20px',
                   borderRadius: '8px',
                   cursor: 'pointer'

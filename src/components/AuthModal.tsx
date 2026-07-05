@@ -101,7 +101,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onClose, onSuccess }) => {
 
         <div style={{ textAlign: 'center', marginBottom: 24 }}>
           <div className="logo-icon" style={{ margin: '0 auto 12px auto', width: '44px', height: '44px' }}>
-            <Sparkles size={22} color="white" />
+            <Sparkles size={22} color="var(--primary)" />
           </div>
           <h3 className="section-title" style={{ fontSize: '1.4rem', margin: 0 }}>
             {activeTab === 'signin' ? 'Welcome Back' : 'Create Account'}
@@ -114,7 +114,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onClose, onSuccess }) => {
         {!isSupabaseConfigured ? (
           <div className="glass-panel" style={{ padding: '16px', background: 'rgba(239, 68, 68, 0.05)', borderColor: 'rgba(239, 68, 68, 0.2)', textAlign: 'center' }}>
             <Database size={24} color="var(--accent-rose)" style={{ marginBottom: 8 }} />
-            <h4 style={{ color: 'white', fontSize: '0.9rem', marginBottom: 4 }}>Supabase Keys Missing</h4>
+            <h4 style={{ color: 'var(--text-primary)', fontSize: '0.9rem', marginBottom: 4 }}>Supabase Keys Missing</h4>
             <p className="text-secondary" style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
               To enable real authentication, you must configure <strong>VITE_SUPABASE_URL</strong> and <strong>VITE_SUPABASE_ANON_KEY</strong> in your <code>.env</code> file.
             </p>
@@ -122,7 +122,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onClose, onSuccess }) => {
         ) : (
           <>
             {/* Tabs */}
-            <div className="auth-tabs" style={{ display: 'flex', borderBottom: '1px solid rgba(255,255,255,0.06)', marginBottom: 20 }}>
+            <div className="auth-tabs" style={{ display: 'flex', borderBottom: '1px solid var(--glass-border)', marginBottom: 20 }}>
               <button
                 className={`auth-tab-btn ${activeTab === 'signin' ? 'active' : ''}`}
                 onClick={() => { setActiveTab('signin'); setErrorMsg(''); setSuccessMsg(''); }}
@@ -131,7 +131,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onClose, onSuccess }) => {
                   padding: '10px 0',
                   background: 'none',
                   border: 'none',
-                  color: activeTab === 'signin' ? 'white' : 'var(--text-muted)',
+                  color: activeTab === 'signin' ? 'var(--text-primary)' : 'var(--text-muted)',
                   borderBottom: activeTab === 'signin' ? '2px solid var(--primary)' : '2px solid transparent',
                   cursor: 'pointer',
                   fontSize: '0.9rem',
@@ -149,7 +149,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onClose, onSuccess }) => {
                   padding: '10px 0',
                   background: 'none',
                   border: 'none',
-                  color: activeTab === 'signup' ? 'white' : 'var(--text-muted)',
+                  color: activeTab === 'signup' ? 'var(--text-primary)' : 'var(--text-muted)',
                   borderBottom: activeTab === 'signup' ? '2px solid var(--primary)' : '2px solid transparent',
                   cursor: 'pointer',
                   fontSize: '0.9rem',
@@ -163,12 +163,12 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onClose, onSuccess }) => {
 
             {/* Error / Success Messages */}
             {errorMsg && (
-              <div style={{ background: 'rgba(239, 68, 68, 0.08)', border: '1px solid rgba(239, 68, 68, 0.2)', borderRadius: 8, padding: 10, fontSize: '0.8rem', color: '#fca5a5', marginBottom: 16 }}>
+              <div style={{ background: 'rgba(239, 68, 68, 0.08)', border: '1px solid rgba(239, 68, 68, 0.2)', borderRadius: 8, padding: 10, fontSize: '0.8rem', color: '#ef4444', marginBottom: 16 }}>
                 {errorMsg}
               </div>
             )}
             {successMsg && (
-              <div style={{ background: 'rgba(16, 185, 129, 0.08)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: 8, padding: 10, fontSize: '0.8rem', color: '#a7f3d0', marginBottom: 16 }}>
+              <div style={{ background: 'rgba(16, 185, 129, 0.08)', border: '1px solid rgba(16, 185, 129, 0.2)', borderRadius: 8, padding: 10, fontSize: '0.8rem', color: '#10b981', marginBottom: 16 }}>
                 {successMsg}
               </div>
             )}
@@ -270,9 +270,9 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onClose, onSuccess }) => {
 
             {/* Social Divider */}
             <div style={{ display: 'flex', alignItems: 'center', margin: '24px 0 16px 0', gap: 10 }}>
-              <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.06)' }} />
+              <div style={{ flex: 1, height: '1px', background: 'var(--glass-border)' }} />
               <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>or continue with</span>
-              <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.06)' }} />
+              <div style={{ flex: 1, height: '1px', background: 'var(--glass-border)' }} />
             </div>
 
             {/* Google OAuth Login */}
@@ -286,17 +286,17 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onClose, onSuccess }) => {
                 gap: 10,
                 width: '100%',
                 padding: '10px',
-                background: 'rgba(255,255,255,0.02)',
+                background: 'rgba(255,255,255,0.01)',
                 border: '1px solid var(--glass-border)',
                 borderRadius: '8px',
-                color: 'white',
+                color: 'var(--text-primary)',
                 cursor: 'pointer',
                 fontWeight: 600,
                 fontSize: '0.85rem',
                 transition: 'all var(--transition-fast)'
               }}
-              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.05)'}
-              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.02)'}
+              onMouseEnter={(e) => e.currentTarget.style.background = 'var(--glass-border)'}
+              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.01)'}
             >
               <svg viewBox="0 0 24 24" width="16" height="16">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />

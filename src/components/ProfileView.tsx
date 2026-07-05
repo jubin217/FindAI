@@ -354,7 +354,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({ user, onNavigateHome, 
                       <X size={14} />
                     </button>
                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4, paddingRight: 20 }}>
-                      <strong style={{ color: 'white' }}>{notice.toolName} ({notice.websiteUrl})</strong>
+                      <strong style={{ color: 'var(--text-primary)' }}>{notice.toolName} ({notice.websiteUrl})</strong>
                       <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}>
                         {new Date(notice.createdAt).toLocaleDateString()}
                       </span>
@@ -420,7 +420,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({ user, onNavigateHome, 
                   >
                     <div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                        <h4 style={{ fontWeight: 600, fontSize: '1rem', color: 'white', margin: 0 }}>{tool.name}</h4>
+                        <h4 style={{ fontWeight: 600, fontSize: '1rem', color: 'var(--text-primary)', margin: 0 }}>{tool.name}</h4>
                         <span 
                           style={{ 
                             fontSize: '0.7rem', 
@@ -450,7 +450,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({ user, onNavigateHome, 
                           background: 'rgba(255,255,255,0.03)',
                           border: '1px solid var(--glass-border)',
                           borderRadius: 6,
-                          color: 'white',
+                          color: 'var(--text-primary)',
                           cursor: 'pointer'
                         }}
                       >
@@ -668,7 +668,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({ user, onNavigateHome, 
                     background: 'rgba(255,255,255,0.03)',
                     border: '1px solid var(--glass-border)',
                     borderRadius: 6,
-                    color: 'white',
+                    color: 'var(--text-primary)',
                     cursor: 'pointer'
                   }}
                 >

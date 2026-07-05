@@ -34,7 +34,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ onClose }) => {
             <Shield size={22} />
           </div>
           <div>
-            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.6rem', fontWeight: 700, color: 'white', margin: 0 }}>Privacy Policy</h2>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.6rem', fontWeight: 700, color: 'var(--text-primary)', margin: 0 }}>Privacy Policy</h2>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.78rem', color: 'var(--text-secondary)', marginTop: 4 }}>
               <Calendar size={12} />
               <span>Last Updated: June 23, 2026</span>
@@ -45,9 +45,9 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ onClose }) => {
         {/* Content body */}
         <div className="privacy-body text-secondary" style={{ fontSize: '0.9rem', lineHeight: '1.7', color: 'var(--text-secondary)' }}>
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>1. Introduction</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>1. Introduction</h3>
             <p>
-              Welcome to FindAI. This Privacy Policy explains how we collect, use, disclose, and protect information when you access or use our website located at <a href="https://findai.store" target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'underline' }}>https://findai.store</a> and any related services, features, content, or applications (collectively, the "Services").
+              Welcome to FindAI. This Privacy Policy explains how we collect, use, disclose, and protect information when you access or use our website located at <a href="https://findai.store" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'underline' }}>https://findai.store</a> and any related services, features, content, or applications (collectively, the "Services").
             </p>
             <p style={{ marginTop: 10 }}>
               FindAI is an independent platform that helps users discover, explore, compare, and learn about artificial intelligence tools, products, and services from third-party providers.
@@ -58,9 +58,9 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>2. Information We Collect</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>2. Information We Collect</h3>
             
-            <h4 style={{ color: 'white', fontSize: '0.95rem', fontWeight: 600, margin: '14px 0 6px 0' }}>Information You Provide to Us</h4>
+            <h4 style={{ color: 'var(--text-primary)', fontSize: '0.95rem', fontWeight: 600, margin: '14px 0 6px 0' }}>Information You Provide to Us</h4>
             <p>Depending on how you use our Services, we may collect information that you voluntarily provide, including:</p>
             <ul style={{ paddingLeft: 20, marginTop: 8, listStyleType: 'disc' }}>
               <li>Name</li>
@@ -71,7 +71,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ onClose }) => {
               <li>Any other information you choose to provide</li>
             </ul>
 
-            <h4 style={{ color: 'white', fontSize: '0.95rem', fontWeight: 600, margin: '18px 0 6px 0' }}>Information Collected Automatically</h4>
+            <h4 style={{ color: 'var(--text-primary)', fontSize: '0.95rem', fontWeight: 600, margin: '18px 0 6px 0' }}>Information Collected Automatically</h4>
             <p>When you access or use our Services, we may automatically collect certain information, including:</p>
             <ul style={{ paddingLeft: 20, marginTop: 8, listStyleType: 'disc' }}>
               <li>IP address</li>
@@ -86,7 +86,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ onClose }) => {
               <li>Cookies and similar technologies</li>
             </ul>
 
-            <h4 style={{ color: 'white', fontSize: '0.95rem', fontWeight: 600, margin: '18px 0 6px 0' }}>Information Obtained from Public Sources</h4>
+            <h4 style={{ color: 'var(--text-primary)', fontSize: '0.95rem', fontWeight: 600, margin: '18px 0 6px 0' }}>Information Obtained from Public Sources</h4>
             <p>As part of operating an AI discovery platform, we may collect and process information regarding artificial intelligence tools and companies from publicly available sources, including:</p>
             <ul style={{ paddingLeft: 20, marginTop: 8, listStyleType: 'disc' }}>
               <li>Public websites</li>
@@ -102,7 +102,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>3. How We Use Information</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>3. How We Use Information</h3>
             <p>We may use information for legitimate business purposes, including to:</p>
             <ul style={{ paddingLeft: 20, marginTop: 8, listStyleType: 'disc' }}>
               <li>Provide, maintain, and improve our Services</li>
@@ -120,7 +120,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>4. Cookies and Similar Technologies</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>4. Cookies and Similar Technologies</h3>
             <p>We use cookies, pixels, local storage technologies, and similar technologies to:</p>
             <ul style={{ paddingLeft: 20, marginTop: 8, listStyleType: 'disc' }}>
               <li>Operate and secure the Services</li>
@@ -136,7 +136,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>5. Analytics and Third-Party Services</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>5. Analytics and Third-Party Services</h3>
             <p>We may use third-party service providers to assist in operating our Services, including providers of:</p>
             <ul style={{ paddingLeft: 20, marginTop: 8, listStyleType: 'disc' }}>
               <li>Hosting and infrastructure</li>
@@ -152,35 +152,35 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>6. Disclosure of Information</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>6. Disclosure of Information</h3>
             <p>We may disclose information in the following circumstances:</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginTop: 10 }}>
               <div>
-                <strong style={{ color: 'white' }}>Service Providers: </strong>
+                <strong style={{ color: 'var(--text-primary)' }}>Service Providers: </strong>
                 <span>To vendors and service providers who perform services on our behalf.</span>
               </div>
               <div>
-                <strong style={{ color: 'white' }}>Legal Requirements: </strong>
+                <strong style={{ color: 'var(--text-primary)' }}>Legal Requirements: </strong>
                 <span>To comply with applicable laws, regulations, legal processes, or governmental requests.</span>
               </div>
               <div>
-                <strong style={{ color: 'white' }}>Protection of Rights: </strong>
+                <strong style={{ color: 'var(--text-primary)' }}>Protection of Rights: </strong>
                 <span>To enforce our agreements, investigate potential violations, prevent fraud or security issues, and protect the rights, property, and safety of FindAI, our users, or others.</span>
               </div>
               <div>
-                <strong style={{ color: 'white' }}>Corporate Transactions: </strong>
+                <strong style={{ color: 'var(--text-primary)' }}>Corporate Transactions: </strong>
                 <span>In connection with an actual or proposed merger, acquisition, financing transaction, asset sale, reorganization, bankruptcy, or similar corporate event.</span>
               </div>
               <div>
-                <strong style={{ color: 'white' }}>With Consent: </strong>
+                <strong style={{ color: 'var(--text-primary)' }}>With Consent: </strong>
                 <span>With your consent or at your direction.</span>
               </div>
             </div>
-            <p style={{ marginTop: 12, fontWeight: 600, color: 'white' }}>We do not sell personal information to third parties.</p>
+            <p style={{ marginTop: 12, fontWeight: 600, color: 'var(--text-primary)' }}>We do not sell personal information to third parties.</p>
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>7. Third-Party Products and Links</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>7. Third-Party Products and Links</h3>
             <p>
               The Services may contain information about, references to, or links to third-party websites, products, applications, and services.
             </p>
@@ -193,7 +193,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>8. AI Tool Listings and Public Information</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>8. AI Tool Listings and Public Information</h3>
             <p>FindAI aggregates and presents information concerning artificial intelligence tools and related companies from publicly available sources.</p>
             <p style={{ marginTop: 8 }}>Unless explicitly stated otherwise:</p>
             <ul style={{ paddingLeft: 20, marginTop: 8, listStyleType: 'disc' }}>
@@ -205,7 +205,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>9. Data Retention</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>9. Data Retention</h3>
             <p>We retain information for as long as reasonably necessary to:</p>
             <ul style={{ paddingLeft: 20, marginTop: 8, listStyleType: 'disc' }}>
               <li>Provide and improve our Services;</li>
@@ -220,7 +220,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>10. Data Security</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>10. Data Security</h3>
             <p>
               We implement reasonable administrative, technical, and organizational safeguards designed to protect information against unauthorized access, loss, misuse, alteration, and disclosure.
             </p>
@@ -230,7 +230,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>11. International Data Transfers</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>11. International Data Transfers</h3>
             <p>
               Your information may be processed and stored in countries other than your country of residence, which may have data protection laws that differ from those in your jurisdiction.
             </p>
@@ -240,7 +240,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>12. Your Rights and Choices</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>12. Your Rights and Choices</h3>
             <p>Depending on your location and applicable law, you may have rights regarding your personal information, including rights to:</p>
             <ul style={{ paddingLeft: 20, marginTop: 8, listStyleType: 'disc' }}>
               <li>Access information we hold about you;</li>
@@ -256,7 +256,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>13. Children's Privacy</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>13. Children's Privacy</h3>
             <p>
               The Services are not directed to children under the age of 13, or any higher minimum age required under applicable law.
             </p>
@@ -266,7 +266,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>14. Changes to This Privacy Policy</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>14. Changes to This Privacy Policy</h3>
             <p>
               We may update this Privacy Policy from time to time to reflect changes in our Services, legal requirements, or business practices.
             </p>
@@ -279,11 +279,11 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 10 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>15. Contact Us</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>15. Contact Us</h3>
             <p>If you have any questions, requests, or concerns regarding this Privacy Policy or our privacy practices, please contact us at:</p>
             <div style={{ marginTop: 10, background: 'rgba(255, 255, 255, 0.015)', border: '1px solid var(--glass-border)', padding: '16px 20px', borderRadius: '10px', display: 'inline-block' }}>
-              <strong style={{ color: 'white', display: 'block', marginBottom: 4 }}>FindAI</strong>
-              <span>Website: </span><a href="https://findai.store" target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'underline' }}>https://findai.store</a><br />
+              <strong style={{ color: 'var(--text-primary)', display: 'block', marginBottom: 4 }}>FindAI</strong>
+              <span>Website: </span><a href="https://findai.store" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'underline' }}>https://findai.store</a><br />
               <span>Email: </span><a href="mailto:support@findai.store" style={{ color: 'var(--primary)', fontWeight: 600 }}>support@findai.store</a>
             </div>
           </section>

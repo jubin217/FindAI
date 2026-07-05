@@ -229,7 +229,7 @@ export const ToolDetailsModal: React.FC<ToolDetailsModalProps> = ({
                         {getInitials(alt.name)}
                       </div>
                       <div>
-                        <div style={{ fontWeight: 600, fontSize: '0.85rem', color: 'white' }}>{alt.name}</div>
+                        <div style={{ fontWeight: 600, fontSize: '0.85rem', color: 'var(--text-primary)' }}>{alt.name}</div>
                         <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Rating: {alt.rating.toFixed(1)} ⭐</div>
                       </div>
                     </div>

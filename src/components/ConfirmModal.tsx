@@ -118,7 +118,7 @@ export const ConfirmModal: React.FC<ConfirmModalProps> = ({
                 flex: 1,
                 background: 'rgba(255, 255, 255, 0.02)',
                 border: '1px solid var(--glass-border)',
-                color: 'white',
+                color: 'var(--text-primary)',
                 padding: '10px 16px',
                 borderRadius: '8px',
                 fontSize: '0.85rem',
@@ -141,7 +141,7 @@ export const ConfirmModal: React.FC<ConfirmModalProps> = ({
               fontWeight: 600,
               cursor: 'pointer',
               background: type === 'confirm' ? 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)' : 'linear-gradient(135deg, var(--primary) 0%, #3b82f6 100%)',
-              color: 'white',
+              color: 'var(--text-primary)',
               boxShadow: type === 'confirm' ? '0 4px 15px rgba(239, 68, 68, 0.2)' : '0 4px 15px rgba(99, 102, 241, 0.2)'
             }}
           >

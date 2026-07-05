@@ -93,7 +93,7 @@ export const ComparisonModal: React.FC<ComparisonModalProps> = ({
                 <td><strong>Pricing Tier</strong></td>
                 {selectedTools.map((tool) => (
                   <td key={tool.id} className="compare-value">
-                    <span style={{ fontWeight: 600, color: 'white' }}>{tool.pricingType}</span>
+                    <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{tool.pricingType}</span>
                     <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: 4 }}>
                       {tool.priceRange}
                     </div>

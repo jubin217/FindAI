@@ -34,7 +34,7 @@ export const AttributionModal: React.FC<AttributionModalProps> = ({ onClose }) =
             <ShieldAlert size={22} />
           </div>
           <div>
-            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.45rem', fontWeight: 700, color: 'white', margin: 0 }}>Attribution & Trademark Notice</h2>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.45rem', fontWeight: 700, color: 'var(--text-primary)', margin: 0 }}>Attribution & Trademark Notice</h2>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.78rem', color: 'var(--text-secondary)', marginTop: 4 }}>
               <Calendar size={12} />
               <span>Last Updated: June 23, 2026</span>

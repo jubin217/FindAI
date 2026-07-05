@@ -34,7 +34,7 @@ export const TermsModal: React.FC<TermsModalProps> = ({ onClose }) => {
             <FileText size={22} />
           </div>
           <div>
-            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.6rem', fontWeight: 700, color: 'white', margin: 0 }}>Terms of Service</h2>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.6rem', fontWeight: 700, color: 'var(--text-primary)', margin: 0 }}>Terms of Service</h2>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.78rem', color: 'var(--text-secondary)', marginTop: 4 }}>
               <Calendar size={12} />
               <span>Last Updated: June 23, 2026</span>
@@ -45,9 +45,9 @@ export const TermsModal: React.FC<TermsModalProps> = ({ onClose }) => {
         {/* Content body */}
         <div className="terms-body text-secondary" style={{ fontSize: '0.9rem', lineHeight: '1.7', color: 'var(--text-secondary)' }}>
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>1. Acceptance of Terms</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>1. Acceptance of Terms</h3>
             <p>
-              Welcome to FindAI. These Terms of Service ("Terms") govern your access to and use of the website located at <a href="https://findai.store" target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'underline' }}>https://findai.store</a> and any related websites, applications, features, content, and services (collectively, the "Services").
+              Welcome to FindAI. These Terms of Service ("Terms") govern your access to and use of the website located at <a href="https://findai.store" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'underline' }}>https://findai.store</a> and any related websites, applications, features, content, and services (collectively, the "Services").
             </p>
             <p style={{ marginTop: 10 }}>
               By accessing or using the Services, you acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, you may not access or use the Services.
@@ -58,7 +58,7 @@ export const TermsModal: React.FC<TermsModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>2. Description of Services</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>2. Description of Services</h3>
             <p>
               FindAI is an independent platform designed to help users discover, explore, compare, and learn about artificial intelligence tools, products, services, companies, and related information.
             </p>
@@ -78,7 +78,7 @@ export const TermsModal: React.FC<TermsModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>3. Eligibility</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>3. Eligibility</h3>
             <p>
               You must be at least 13 years of age, or the minimum age required by applicable law in your jurisdiction, to access or use the Services.
             </p>
@@ -91,7 +91,7 @@ export const TermsModal: React.FC<TermsModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>4. Accounts</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>4. Accounts</h3>
             <p>Certain features of the Services may require the creation of an account.</p>
             <p style={{ marginTop: 8 }}>You agree to:</p>
             <ul style={{ paddingLeft: 20, marginTop: 8, listStyleType: 'disc' }}>
@@ -106,7 +106,7 @@ export const TermsModal: React.FC<TermsModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>5. User Content and Submissions</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>5. User Content and Submissions</h3>
             <p>
               The Services may permit users to submit content, including tool submissions, reviews, comments, ratings, feedback, and other materials ("User Content").
             </p>
@@ -126,7 +126,7 @@ export const TermsModal: React.FC<TermsModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>6. Third-Party Products and Services</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>6. Third-Party Products and Services</h3>
             <p>
               The Services may contain references, information, integrations, advertisements, or links relating to third-party products, websites, and services.
             </p>
@@ -142,7 +142,7 @@ export const TermsModal: React.FC<TermsModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>7. Rankings, Recommendations, and Information</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>7. Rankings, Recommendations, and Information</h3>
             <p>
               The Services may provide rankings, trending indicators, recommendations, popularity scores, comparisons, reviews, traffic estimates, market insights, summaries, and analyses. Such information may be generated using algorithms, publicly available information, third-party sources, automated systems, and user interactions.
             </p>
@@ -158,7 +158,7 @@ export const TermsModal: React.FC<TermsModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>8. Intellectual Property Rights</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>8. Intellectual Property Rights</h3>
             <p>
               The Services, including all software, code, design, graphics, trademarks, logos, text, databases, compilations, and other content provided by FindAI, are owned by or licensed to FindAI and are protected by intellectual property and other applicable laws.
             </p>
@@ -171,7 +171,7 @@ export const TermsModal: React.FC<TermsModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>9. Third-Party Intellectual Property</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>9. Third-Party Intellectual Property</h3>
             <p>
               Names, logos, trademarks, service marks, product names, and brands appearing on the Services may belong to their respective owners. Such references are used solely for identification, informational, commentary, indexing, comparison, and discovery purposes.
             </p>
@@ -185,7 +185,7 @@ export const TermsModal: React.FC<TermsModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>10. Acceptable Use</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>10. Acceptable Use</h3>
             <p>You agree not to:</p>
             <ul style={{ paddingLeft: 20, marginTop: 8, listStyleType: 'disc' }}>
               <li>Violate any applicable law or regulation;</li>
@@ -202,7 +202,7 @@ export const TermsModal: React.FC<TermsModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>11. Availability of Services</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>11. Availability of Services</h3>
             <p>We strive to provide reliable Services but do not guarantee that the Services will:</p>
             <ul style={{ paddingLeft: 20, marginTop: 8, listStyleType: 'disc' }}>
               <li>Be uninterrupted, secure, error-free, or continuously available;</li>
@@ -214,8 +214,8 @@ export const TermsModal: React.FC<TermsModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>12. Disclaimer of Warranties</h3>
-            <p style={{ fontWeight: 600, color: 'white', letterSpacing: '0.5px' }}>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>12. Disclaimer of Warranties</h3>
+            <p style={{ fontWeight: 600, color: 'var(--text-primary)', letterSpacing: '0.5px' }}>
               THE SERVICES ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS.
             </p>
             <p style={{ marginTop: 10 }}>
@@ -227,7 +227,7 @@ export const TermsModal: React.FC<TermsModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>13. Limitation of Liability</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>13. Limitation of Liability</h3>
             <p>
               TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, FINDAI, ITS AFFILIATES, DIRECTORS, OFFICERS, EMPLOYEES, CONTRACTORS, AND LICENSORS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, INCLUDING LOSS OF PROFITS, REVENUE, DATA, OR BUSINESS INTERRUPTION, ARISING OUT OF OR RELATING TO YOUR USE OF THE SERVICES.
             </p>
@@ -237,28 +237,28 @@ export const TermsModal: React.FC<TermsModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>14. Indemnification</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>14. Indemnification</h3>
             <p>
               You agree to defend, indemnify, and hold harmless FindAI, its affiliates, officers, directors, employees, contractors, and licensors from and against any claims, damages, liabilities, losses, expenses, and costs, including reasonable legal fees, arising out of or relating to your use of the Services, your User Content, your violation of these Terms, or your violation of any third-party rights.
             </p>
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>15. Termination</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>15. Termination</h3>
             <p>
               We may suspend, restrict, or terminate your access to all or any part of the Services at any time, with or without notice, for any reason, including if we reasonably believe that you have violated these Terms, your activities create risks, or we are required to do so by law.
             </p>
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>16. Changes to the Services and Terms</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>16. Changes to the Services and Terms</h3>
             <p>
               We may modify the Services and these Terms from time to time. If we make material changes, we may provide notice through the Services or by other reasonable means. Your continued use of the Services after changes become effective constitutes your acceptance of the revised Terms.
             </p>
           </section>
 
           <section style={{ marginBottom: 24 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>17. Governing Law</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>17. Governing Law</h3>
             <p>
               These Terms shall be governed by and construed in accordance with the laws of the Republic of India, without regard to conflict of law principles.
             </p>
@@ -268,11 +268,11 @@ export const TermsModal: React.FC<TermsModalProps> = ({ onClose }) => {
           </section>
 
           <section style={{ marginBottom: 10 }}>
-            <h3 style={{ color: 'white', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>18. Contact Information</h3>
+            <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>18. Contact Information</h3>
             <p>If you have any questions, requests, or concerns regarding these Terms or the Services, please contact us at:</p>
             <div style={{ marginTop: 10, background: 'rgba(255, 255, 255, 0.015)', border: '1px solid var(--glass-border)', padding: '16px 20px', borderRadius: '10px', display: 'inline-block' }}>
-              <strong style={{ color: 'white', display: 'block', marginBottom: 4 }}>FindAI</strong>
-              <span>Website: </span><a href="https://findai.store" target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'underline' }}>https://findai.store</a><br />
+              <strong style={{ color: 'var(--text-primary)', display: 'block', marginBottom: 4 }}>FindAI</strong>
+              <span>Website: </span><a href="https://findai.store" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'underline' }}>https://findai.store</a><br />
               <span>Email: </span><a href="mailto:support@findai.store" style={{ color: 'var(--primary)', fontWeight: 600 }}>support@findai.store</a>
             </div>
           </section>

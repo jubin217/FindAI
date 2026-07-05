@@ -57,7 +57,7 @@ export const AdminReviewView: React.FC<AdminReviewViewProps> = ({
           </div>
           <h2 style={{ fontSize: '1.5rem', fontWeight: 600 }}>Access Denied</h2>
           <p className="text-secondary" style={{ fontSize: '0.9rem' }}>
-            You are signed in as <strong style={{ color: 'white' }}>{user.email}</strong>, which does not have administrator privileges.
+            You are signed in as <strong style={{ color: 'var(--text-primary)' }}>{user.email}</strong>, which does not have administrator privileges.
           </p>
           <button className="btn-primary" onClick={onNavigateHome} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '10px 20px', width: '100%', justifyContent: 'center' }}>
             <ArrowLeft size={16} />
@@ -170,7 +170,7 @@ export const AdminReviewView: React.FC<AdminReviewViewProps> = ({
             ) : (
               <AlertTriangle size={18} color="var(--accent-rose)" />
             )}
-            <span style={{ fontSize: '0.9rem', color: 'white' }}>{actionMessage.text}</span>
+            <span style={{ fontSize: '0.9rem', color: 'var(--text-primary)' }}>{actionMessage.text}</span>
           </div>
           <button 
             onClick={() => setActionMessage(null)}
@@ -227,7 +227,7 @@ export const AdminReviewView: React.FC<AdminReviewViewProps> = ({
               >
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap', marginBottom: 8 }}>
-                    <h3 style={{ fontSize: '1.2rem', fontWeight: 600, color: 'white' }}>{tool.name}</h3>
+                    <h3 style={{ fontSize: '1.2rem', fontWeight: 600, color: 'var(--text-primary)' }}>{tool.name}</h3>
                     <span className="badge-category">{tool.category}</span>
                     <span className="badge-pricing">{tool.pricingType}</span>
                   </div>
@@ -235,13 +235,13 @@ export const AdminReviewView: React.FC<AdminReviewViewProps> = ({
                   <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: 12 }}>{tool.tagline}</p>
                   
                   <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                    <span>Price Range: <strong style={{ color: 'white' }}>{tool.priceRange || 'N/A'}</strong></span>
+                    <span>Price Range: <strong style={{ color: 'var(--text-primary)' }}>{tool.priceRange || 'N/A'}</strong></span>
                     <span>Website: <a href={tool.websiteUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--secondary)', display: 'inline-flex', alignItems: 'center', gap: 2 }}>{tool.websiteUrl.substring(0, 30)}... <ExternalLink size={10} /></a></span>
                     {tool.userId && <span>Submitted by ID: <code style={{ color: '#ec4899', fontSize: '0.75rem' }}>{tool.userId.substring(0, 8)}...</code></span>}
                   </div>
 
                   <div style={{ marginTop: 14, background: 'rgba(0,0,0,0.2)', padding: '10px 14px', borderRadius: 6, fontSize: '0.82rem', border: '1px solid rgba(255,255,255,0.03)' }}>
-                    <strong style={{ color: 'white', display: 'block', marginBottom: 4 }}>Full Description:</strong>
+                    <strong style={{ color: 'var(--text-primary)', display: 'block', marginBottom: 4 }}>Full Description:</strong>
                     <span className="text-secondary">{tool.description}</span>
                   </div>
                 </div>
@@ -294,7 +294,7 @@ export const AdminReviewView: React.FC<AdminReviewViewProps> = ({
               >
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-                    <strong style={{ fontSize: '0.95rem', color: 'white' }}>{tool.name}</strong>
+                    <strong style={{ fontSize: '0.95rem', color: 'var(--text-primary)' }}>{tool.name}</strong>
                     <span className="badge-category" style={{ fontSize: '0.7rem', padding: '2px 6px' }}>{tool.category}</span>
                     <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
                       ({tool.clicks || 0} clicks • {tool.reviewCount || 0} reviews)
