@@ -67,8 +67,11 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className={`header ${visible ? '' : 'header-hidden'}`}>
-      <div className="container header-container" style={{ maxWidth: '1400px' }}>
+    <header className={`header ${visible ? '' : 'header-hidden'}`} style={{ position: 'fixed', top: '20px', zIndex: 1000 }}>
+      {/* Decorative panel mounting screws */}
+      <div className="skeuo-screw" style={{ left: '10px', top: '50%', transform: 'translateY(-50%)' }} />
+      <div className="skeuo-screw" style={{ right: '10px', top: '50%', transform: 'translateY(-50%)' }} />
+      <div className="container header-container" style={{ maxWidth: '1400px', paddingLeft: '32px', paddingRight: '32px' }}>
         {/* Brand Logo */}
         <a 
           href="/" 
@@ -90,6 +93,7 @@ export const Header: React.FC<HeaderProps> = ({
             />
           </div>
           <span className="logo-text">FindAI<span className="logo-suffix">.store</span></span>
+          <span className="led-indicator led-green" style={{ marginLeft: 8 }} title="System Online & Indexing" />
         </a>
 
         {/* Global Search Bar (Only display when on Home View) */}
@@ -112,20 +116,17 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Theme Toggle Button */}
           <button 
             onClick={onThemeToggle} 
-            className="theme-toggle-btn btn-3d"
+            className="theme-toggle-btn skeuo-btn"
             title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
             style={{
               width: 36,
               height: 36,
               borderRadius: '50%',
-              background: 'rgba(255, 255, 255, 0.03)',
-              border: '1px solid var(--glass-border)',
               color: 'var(--text-primary)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
-              transition: 'transform 0.3s ease, background 0.2s',
               padding: 0
             }}
           >

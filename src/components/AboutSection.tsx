@@ -55,7 +55,13 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigateToSubmit }
             className="bento-item card-3d col-span-2 glass-panel"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
+            style={{ position: 'relative' }}
           >
+            <div className="skeuo-screw" style={{ top: '10px', left: '10px' }} />
+            <div className="skeuo-screw" style={{ top: '10px', right: '10px' }} />
+            <div className="skeuo-screw" style={{ bottom: '10px', left: '10px' }} />
+            <div className="skeuo-screw" style={{ bottom: '10px', right: '10px' }} />
+            
             <div className="card-glow-bg" />
             <div className="bento-card-content">
               <span className="card-num">01 / CURATION INTEGRITY</span>
@@ -73,7 +79,13 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigateToSubmit }
             className="bento-item card-3d glass-panel"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
+            style={{ position: 'relative' }}
           >
+            <div className="skeuo-screw" style={{ top: '10px', left: '10px' }} />
+            <div className="skeuo-screw" style={{ top: '10px', right: '10px' }} />
+            <div className="skeuo-screw" style={{ bottom: '10px', left: '10px' }} />
+            <div className="skeuo-screw" style={{ bottom: '10px', right: '10px' }} />
+
             <div className="card-glow-bg" />
             <div className="bento-card-content">
               <span className="card-num">02 / COMPARE MATRIX</span>
@@ -91,7 +103,13 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigateToSubmit }
             className="bento-item card-3d glass-panel"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
+            style={{ position: 'relative' }}
           >
+            <div className="skeuo-screw" style={{ top: '10px', left: '10px' }} />
+            <div className="skeuo-screw" style={{ top: '10px', right: '10px' }} />
+            <div className="skeuo-screw" style={{ bottom: '10px', left: '10px' }} />
+            <div className="skeuo-screw" style={{ bottom: '10px', right: '10px' }} />
+
             <div className="card-glow-bg" />
             <div className="bento-card-content">
               <span className="card-num">03 / ECHO SYSTEM</span>
@@ -109,7 +127,13 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigateToSubmit }
             className="bento-item card-3d col-span-2 glass-panel"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
+            style={{ position: 'relative' }}
           >
+            <div className="skeuo-screw" style={{ top: '10px', left: '10px' }} />
+            <div className="skeuo-screw" style={{ top: '10px', right: '10px' }} />
+            <div className="skeuo-screw" style={{ bottom: '10px', left: '10px' }} />
+            <div className="skeuo-screw" style={{ bottom: '10px', right: '10px' }} />
+
             <div className="card-glow-bg" />
             <div className="bento-card-content">
               <span className="card-num">04 / WEBGL ORBIT</span>
