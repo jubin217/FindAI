@@ -38,7 +38,7 @@
 
   /* Background Gradient */
   --bg-gradient-overlay: linear-gradient(rgba(10, 11, 14, 0.62), rgba(10, 11, 14, 0.82));
-  --bg-image: var(--bg-gradient-overlay), url('/cracked_cement_texture.png');
+  --bg-image: var(--bg-gradient-overlay), url('/cracked_cement_texture.webp');
 }
 
 /* --- RESET & BASIC STYLES --- */
@@ -2749,7 +2749,7 @@ button {
                          radial-gradient(at 30% 60%, rgba(79, 70, 229, 0.06) 0px, transparent 40%),
                          radial-gradient(at 70% 80%, rgba(6, 182, 212, 0.06) 0px, transparent 40%),
                          linear-gradient(to bottom, #d5e0ea, #e2ebf0);
-  --bg-image: var(--bg-gradient-overlay), url('/cracked_cement_texture.png');
+  --bg-image: var(--bg-gradient-overlay), url('/cracked_cement_texture.webp');
 }
 
 /* Custom Element Swaps under Light Theme */

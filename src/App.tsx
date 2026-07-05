@@ -882,7 +882,7 @@ function App() {
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
                 <div style={{ width: 44, height: 44, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <img 
-                    src="/logoonly-removebg.png" 
+                    src="/logoonly-removebg.webp" 
                     alt="FindAI Logo" 
                     style={{ 
                       width: '100%', 
