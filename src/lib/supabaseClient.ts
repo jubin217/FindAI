@@ -59,7 +59,9 @@ const mapDbTool = (t: any): AITool => {
 export const db = {
   async getTools(): Promise<AITool[]> {
     if (!supabase) {
-      throw new Error('Supabase client is not initialized. Please configure VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.');
+      console.warn('Supabase client is not initialized, falling back to local INITIAL_TOOLS cache.');
+      const { INITIAL_TOOLS } = await import('../data/tools');
+      return INITIAL_TOOLS;
     }
     try {
       const { data: toolsData, error: toolsError } = await supabase
@@ -67,16 +69,29 @@ export const db = {
         .select('*, reviews(*)');
 
       if (toolsError) throw toolsError;
-      return (toolsData || []).map(mapDbTool);
+      if (!toolsData || toolsData.length === 0) {
+        console.warn('Supabase tools table is empty, falling back to local INITIAL_TOOLS cache.');
+        const { INITIAL_TOOLS } = await import('../data/tools');
+        return INITIAL_TOOLS;
+      }
+      return toolsData.map(mapDbTool);
     } catch (err) {
-      console.error('Error fetching tools from Supabase:', err);
-      throw err;
+      console.error('Error fetching tools from Supabase, falling back to local INITIAL_TOOLS cache:', err);
+      try {
+        const { INITIAL_TOOLS } = await import('../data/tools');
+        return INITIAL_TOOLS;
+      } catch (fallbackErr) {
+        console.error('Failed to load local fallback cache:', fallbackErr);
+        throw err;
+      }
     }
   },
 
   async getUserTools(userId: string): Promise<AITool[]> {
     if (!supabase) {
-      throw new Error('Supabase client is not initialized. Please configure VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.');
+      console.warn('Supabase client is not initialized, returning filtered local submissions.');
+      const { INITIAL_TOOLS } = await import('../data/tools');
+      return INITIAL_TOOLS.filter(t => t.userId === userId);
     }
     try {
       const { data: toolsData, error: toolsError } = await supabase
@@ -87,8 +102,14 @@ export const db = {
       if (toolsError) throw toolsError;
       return (toolsData || []).map(mapDbTool);
     } catch (err) {
-      console.error('Error fetching user tools from Supabase:', err);
-      throw err;
+      console.error('Error fetching user tools from Supabase, falling back to filtered local cache:', err);
+      try {
+        const { INITIAL_TOOLS } = await import('../data/tools');
+        return INITIAL_TOOLS.filter(t => t.userId === userId);
+      } catch (fallbackErr) {
+        console.error('Failed to load local fallback cache:', fallbackErr);
+        return [];
+      }
     }
   },
 
