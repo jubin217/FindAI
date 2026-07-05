@@ -81,7 +81,7 @@ export const Header: React.FC<HeaderProps> = ({
           <div style={{ width: 44, height: 44, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
             <img 
               src="/logoonly-removebg.webp" 
-              alt="FindAI Logo" 
+              alt="FindAI Logo - Find Best AI Tools Directory" 
               style={{ 
                 width: '100%', 
                 height: '100%', 
