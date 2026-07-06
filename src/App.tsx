@@ -206,9 +206,14 @@ function App() {
     }
   };
 
+  // Fetch tools data only when home or admin views are active to avoid blocking other pages
   useEffect(() => {
-    fetchToolsData();
+    if (currentView === 'home' || currentView === 'admin') {
+      fetchToolsData();
+    }
+  }, [currentView]);
 
+  useEffect(() => {
     // Parse search queries directly on load for search engines / link sharing
     const searchParams = new URLSearchParams(window.location.search);
     const searchVal = searchParams.get('search');

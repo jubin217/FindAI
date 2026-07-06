@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Star, Check, Globe, MessageSquare, Send, LogIn } from 'lucide-react';
-import type { AITool } from '../data/tools';
+import type { AITool, Review } from '../data/tools';
 import { useLockBodyScroll } from '../hooks/useLockBodyScroll';
 import { db } from '../lib/supabaseClient';
 
@@ -30,6 +30,42 @@ export const ToolDetailsModal: React.FC<ToolDetailsModalProps> = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
 
+  // Dynamically loaded reviews state
+  const [reviews, setReviews] = useState<Review[]>(tool.reviews || []);
+  const [loadingReviews, setLoadingReviews] = useState(true);
+
+  React.useEffect(() => {
+    let active = true;
+    const loadReviews = async () => {
+      setLoadingReviews(true);
+      try {
+        const data = await db.getToolReviews(tool.id);
+        if (active) {
+          if (data && data.length > 0) {
+            setReviews(data);
+          } else {
+            setReviews(tool.reviews || []);
+          }
+        }
+      } catch (err) {
+        console.error('Error fetching tool reviews:', err);
+        if (active) {
+          setReviews(tool.reviews || []);
+        }
+      } finally {
+        if (active) {
+          setLoadingReviews(false);
+        }
+      }
+    };
+
+    loadReviews();
+
+    return () => {
+      active = false;
+    };
+  }, [tool.id, tool.reviews]);
+
   // Pre-fill reviewer name when user is available
   React.useEffect(() => {
     if (user) {
@@ -49,14 +85,14 @@ export const ToolDetailsModal: React.FC<ToolDetailsModalProps> = ({
 
   // Compute rating breakdown (5-star down to 1-star)
   const ratingBreakdown = [0, 0, 0, 0, 0]; // Index 0 = 5 star, Index 4 = 1 star
-  tool.reviews.forEach((rev) => {
+  reviews.forEach((rev) => {
     const starIdx = 5 - Math.round(rev.rating);
     if (starIdx >= 0 && starIdx < 5) {
       ratingBreakdown[starIdx]++;
     }
   });
 
-  const totalReviews = tool.reviews.length;
+  const totalReviews = reviews.length;
 
   const handleReviewSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -73,7 +109,7 @@ export const ToolDetailsModal: React.FC<ToolDetailsModalProps> = ({
     setSubmitError('');
 
     try {
-      await db.addReview(tool.id, {
+      const newReview = await db.addReview(tool.id, {
         author: authorName.trim(),
         rating: reviewRating,
         comment: commentText.trim(),
@@ -82,6 +118,9 @@ export const ToolDetailsModal: React.FC<ToolDetailsModalProps> = ({
 
       // Reset form on success
       setCommentText('');
+      
+      // Update local reviews state so it renders immediately
+      setReviews((prev) => [newReview, ...prev]);
       
       // Notify parent to refetch tools lists
       onReviewAdded();
@@ -281,10 +320,15 @@ export const ToolDetailsModal: React.FC<ToolDetailsModalProps> = ({
             {/* Reviews feed */}
             <div>
               <div className="reviews-list">
-                {tool.reviews.length === 0 ? (
+                {loadingReviews ? (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 0' }}>
+                    <div className="loader-spinner" style={{ width: 16, height: 16, border: '2px solid rgba(255,255,255,0.1)', borderTopColor: 'var(--primary)', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
+                    <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Loading reviews...</span>
+                  </div>
+                ) : reviews.length === 0 ? (
                   <p className="text-muted" style={{ color: 'var(--text-muted)', fontStyle: 'italic', fontSize: '0.9rem' }}>No reviews yet. Be the first to write a review!</p>
                 ) : (
-                  tool.reviews.map((rev) => (
+                  reviews.map((rev) => (
                     <div key={rev.id} className="review-item">
                       <div className="review-meta">
                         <span className="review-author">{rev.author}</span>

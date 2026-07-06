@@ -66,7 +66,7 @@ export const db = {
     try {
       const { data: toolsData, error: toolsError } = await supabase
         .from('tools')
-        .select('*, reviews(*)');
+        .select('*');
 
       if (toolsError) throw toolsError;
       if (!toolsData || toolsData.length === 0) {
@@ -96,7 +96,7 @@ export const db = {
     try {
       const { data: toolsData, error: toolsError } = await supabase
         .from('tools')
-        .select('*, reviews(*)')
+        .select('*')
         .eq('user_id', userId);
 
       if (toolsError) throw toolsError;
@@ -113,17 +113,44 @@ export const db = {
     }
   },
 
+  async getToolReviews(toolId: string): Promise<Review[]> {
+    if (!supabase) return [];
+    try {
+      const { data, error } = await supabase
+        .from('reviews')
+        .select('*')
+        .eq('tool_id', toolId);
+      if (error) throw error;
+      return (data || []).map(r => ({
+        id: r.id,
+        author: r.author,
+        rating: r.rating,
+        comment: r.comment,
+        createdAt: r.created_at,
+        userId: r.user_id
+      }));
+    } catch (err) {
+      console.error('Error fetching tool reviews:', err);
+      return [];
+    }
+  },
+
   async addTool(tool: Omit<AITool, 'id' | 'rating' | 'reviewCount' | 'reviews' | 'clicks' | 'createdAt' | 'approved'>): Promise<AITool> {
     if (!supabase) {
       throw new Error('Supabase client is not initialized. Please configure VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.');
     }
 
     try {
-      // 1. Fetch all tools to run the duplicate link verification check
-      const allTools = await db.getTools();
+      // 1. Check for duplicate link verification by querying Supabase directly using URL pattern matching
+      const cleanUrl = tool.websiteUrl.toLowerCase().trim().replace(/\/$/, '').replace(/^https?:\/\/(www\.)?/, '');
+      const { data: candidateTools } = await supabase
+        .from('tools')
+        .select('id, website_url')
+        .or(`website_url.ilike.%${cleanUrl}%,website_url.ilike.%${cleanUrl}/%`);
+
       const normalizeUrl = (u: string) => u.toLowerCase().trim().replace(/\/$/, '').replace(/^https?:\/\/(www\.)?/, '');
       const normalizedNew = normalizeUrl(tool.websiteUrl);
-      const isDuplicate = allTools.some(t => normalizeUrl(t.websiteUrl) === normalizedNew);
+      const isDuplicate = (candidateTools || []).some(t => normalizeUrl(t.website_url || '') === normalizedNew);
 
       const newToolId = tool.name.toLowerCase().replace(/[^a-z0-9]/g, '-') + '-' + Math.random().toString(36).substring(2, 6);
       
