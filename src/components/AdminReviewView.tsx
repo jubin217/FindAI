@@ -132,7 +132,7 @@ export const AdminReviewView: React.FC<AdminReviewViewProps> = ({
           </button>
           <h1 style={{ fontSize: '2rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 10 }}>
             <span>Admin Control Panel</span>
-            <span className="badge-category" style={{ fontSize: '0.75rem', padding: '4px 8px', background: 'rgba(6, 182, 212, 0.1)', color: 'var(--secondary)', border: '1px solid rgba(6, 182, 212, 0.2)' }}>
+            <span className="badge-category" style={{ fontSize: '0.75rem', padding: '4px 8px', background: 'rgba(6, 182, 212, 0.1)', color: 'var(--primary)', border: '1px solid rgba(6, 182, 212, 0.2)' }}>
               Moderator
             </span>
           </h1>
@@ -236,7 +236,7 @@ export const AdminReviewView: React.FC<AdminReviewViewProps> = ({
                   
                   <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
                     <span>Price Range: <strong style={{ color: 'var(--text-primary)' }}>{tool.priceRange || 'N/A'}</strong></span>
-                    <span>Website: <a href={tool.websiteUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--secondary)', display: 'inline-flex', alignItems: 'center', gap: 2 }}>{tool.websiteUrl.substring(0, 30)}... <ExternalLink size={10} /></a></span>
+                    <span>Website: <a href={tool.websiteUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)', display: 'inline-flex', alignItems: 'center', gap: 2 }}>{tool.websiteUrl.substring(0, 30)}... <ExternalLink size={10} /></a></span>
                     {tool.userId && <span>Submitted by ID: <code style={{ color: '#ec4899', fontSize: '0.75rem' }}>{tool.userId.substring(0, 8)}...</code></span>}
                   </div>
 

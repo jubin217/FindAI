@@ -20,7 +20,7 @@ export const ComparisonDrawer: React.FC<ComparisonDrawerProps> = ({
   return (
     <div className={`compare-drawer glass-panel ${isVisible ? 'show' : ''}`}>
       <div className="drawer-items">
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginRight: 8, color: 'var(--secondary)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginRight: 8, color: 'var(--primary)' }}>
           <GitCompare size={18} />
           <span style={{ fontWeight: 600, fontSize: '0.85rem' }}>Compare ({selectedTools.length}/3)</span>
         </div>

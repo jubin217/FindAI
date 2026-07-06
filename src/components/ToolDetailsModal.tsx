@@ -208,7 +208,7 @@ export const ToolDetailsModal: React.FC<ToolDetailsModalProps> = ({
               <h3 className="section-title" style={{ fontSize: '1.1rem', marginBottom: 12 }}>Product Details</h3>
               <div className="info-row">
                 <span className="info-label">Category</span>
-                <span className="info-val" style={{ color: 'var(--secondary)' }}>{tool.category}</span>
+                <span className="info-val" style={{ color: 'var(--primary)' }}>{tool.category}</span>
               </div>
               <div className="info-row">
                 <span className="info-label">Pricing Type</span>
@@ -262,7 +262,7 @@ export const ToolDetailsModal: React.FC<ToolDetailsModalProps> = ({
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          color: 'var(--secondary)'
+                          color: 'var(--primary)'
                         }}
                       >
                         {getInitials(alt.name)}
