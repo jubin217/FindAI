@@ -223,7 +223,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({ user, onNavigateHome, 
   }
 
   return (
-    <main className="container scale-up" style={{ minHeight: '80vh', paddingTop: '110px', paddingBottom: '80px' }}>
+    <main className="container scale-up animated" style={{ minHeight: '80vh', paddingTop: '110px', paddingBottom: '80px' }}>
       {/* Back button */}
       <button 
         onClick={onNavigateHome} 
@@ -368,7 +368,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({ user, onNavigateHome, 
             </div>
           )}
 
-          <div className="glass-panel neon-border scale-up" style={{ padding: '30px' }}>
+          <div className="glass-panel neon-border scale-up animated" style={{ padding: '30px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16, marginBottom: 24 }}>
               <div>
                 <h3 className="section-title" style={{ fontSize: '1.4rem', borderBottom: 'none', paddingBottom: 0, margin: 0 }}>

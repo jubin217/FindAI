@@ -140,7 +140,7 @@ export const SubmitToolView: React.FC<SubmitToolViewProps> = ({
   }
 
   return (
-    <main className="container scale-up" style={{ minHeight: '80vh', paddingTop: '110px', paddingBottom: '80px' }}>
+    <main className="container scale-up animated" style={{ minHeight: '80vh', paddingTop: '110px', paddingBottom: '80px' }}>
       {/* Back navigation */}
       <button 
         onClick={onNavigateHome} 

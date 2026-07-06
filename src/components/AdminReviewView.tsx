@@ -119,7 +119,7 @@ export const AdminReviewView: React.FC<AdminReviewViewProps> = ({
   };
 
   return (
-    <main className="container scale-up" style={{ paddingTop: '110px', paddingBottom: 60, minHeight: '80vh' }}>
+    <main className="container scale-up animated" style={{ paddingTop: '110px', paddingBottom: 60, minHeight: '80vh' }}>
       {/* Title Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 32, gap: 16, flexWrap: 'wrap' }} className="fade-in animated">
         <div>
