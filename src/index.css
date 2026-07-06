@@ -1447,7 +1447,7 @@ button {
   inset: 0;
   background: rgba(3, 7, 18, 0.8);
   backdrop-filter: blur(8px);
-  z-index: 150;
+  z-index: 10000;
   display: grid;
   place-items: center;
   padding: 24px;
