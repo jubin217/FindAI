@@ -2674,8 +2674,9 @@ button {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: var(--bg-dark-900);
-  border: 2px solid var(--glass-border);
+  background: var(--skeuo-convex) !important;
+  border: 1px solid var(--bg-dark-900) !important;
+  box-shadow: var(--skeuo-bevel-light), var(--skeuo-bevel-dark), var(--skeuo-shadow-drop) !important;
   color: var(--text-primary);
   font-family: var(--font-heading);
   font-weight: 700;
@@ -2684,14 +2685,14 @@ button {
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
   transition: all var(--transition-normal);
+  transform-style: preserve-3d;
 }
 
 .timeline-step:hover .step-node {
-  border-color: var(--primary);
-  box-shadow: 0 0 20px var(--primary-glow);
-  transform: scale(1.08);
+  border-color: var(--primary) !important;
+  box-shadow: var(--skeuo-bevel-light), var(--skeuo-bevel-dark), 0 0 20px var(--primary-glow) !important;
+  transform: scale(1.08) translateZ(10px);
 }
 
 .timeline-step h4 {
