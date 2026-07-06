@@ -52,7 +52,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigateToSubmit }
         <div className="bento-grid scroll-animate">
           {/* Card 1: col-span-2 */}
           <div 
-            className="bento-item card-3d col-span-2 glass-panel"
+            className="bento-item card-3d col-span-2"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             style={{ position: 'relative' }}
@@ -76,7 +76,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigateToSubmit }
 
           {/* Card 2: col-span-1 */}
           <div 
-            className="bento-item card-3d glass-panel"
+            className="bento-item card-3d"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             style={{ position: 'relative' }}
@@ -100,7 +100,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigateToSubmit }
 
           {/* Card 3: col-span-1 */}
           <div 
-            className="bento-item card-3d glass-panel"
+            className="bento-item card-3d"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             style={{ position: 'relative' }}
@@ -124,7 +124,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigateToSubmit }
 
           {/* Card 4: col-span-2 */}
           <div 
-            className="bento-item card-3d col-span-2 glass-panel"
+            className="bento-item card-3d col-span-2"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             style={{ position: 'relative' }}
@@ -181,7 +181,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigateToSubmit }
         <div className="about-metrics-layout scroll-animate">
           {/* Left panel: Platform Impact Metrics */}
           <div 
-            className="metrics-panel glass-panel"
+            className="metrics-panel"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
           >
@@ -223,7 +223,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigateToSubmit }
 
           {/* Right panel: Our Core Commitments */}
           <div 
-            className="stack-panel glass-panel"
+            className="stack-panel"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
           >
@@ -279,7 +279,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigateToSubmit }
 
         {/* CTA Banner */}
         <div 
-          className="about-cta glass-panel scroll-animate text-center"
+          className="about-cta scroll-animate text-center"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           style={{ marginTop: 60 }}

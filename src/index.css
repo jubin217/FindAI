@@ -1845,8 +1845,9 @@ button {
 
 /* --- FOOTER --- */
 .footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  background: var(--bg-dark-950);
+  background: var(--skeuo-bg-metal) !important;
+  border-top: 1.5px solid var(--bg-dark-800) !important;
+  box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.02) !important;
   padding: 60px 0 40px 0;
   font-size: 0.9rem;
   color: var(--text-muted);
@@ -2204,8 +2205,9 @@ button {
 .metrics-panel, .stack-panel {
   padding: 30px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.015);
-  border: 1px solid var(--glass-border);
+  background: var(--skeuo-convex) !important;
+  box-shadow: var(--skeuo-bevel-light), var(--skeuo-bevel-dark), var(--skeuo-shadow-drop) !important;
+  border: 1px solid var(--bg-dark-900) !important;
   transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(0);
   transform-style: preserve-3d;
   transition: transform 0.18s ease-out, border-color var(--transition-normal), box-shadow var(--transition-normal);
@@ -2213,10 +2215,8 @@ button {
 
 .metrics-panel:hover, .stack-panel:hover {
   transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.15) !important;
-  box-shadow: 
-    0 15px 30px rgba(0, 0, 0, 0.4),
-    0 0 25px rgba(255, 255, 255, 0.03);
+  border-color: var(--bg-dark-800) !important;
+  box-shadow: var(--skeuo-bevel-light), var(--skeuo-bevel-dark), 0 12px 28px rgba(0, 0, 0, 0.5) !important;
 }
 
 .metrics-panel .panel-title,
@@ -2337,8 +2337,9 @@ button {
 .about-cta {
   padding: 60px 40px;
   border-radius: 20px;
-  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.02) 0%, transparent 60%), rgba(255, 255, 255, 0.015);
-  border: 1px solid var(--glass-border);
+  background: var(--skeuo-convex) !important;
+  box-shadow: var(--skeuo-bevel-light), var(--skeuo-bevel-dark), var(--skeuo-shadow-drop) !important;
+  border: 1px solid var(--bg-dark-900) !important;
   position: relative;
   overflow: hidden;
   transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(0);
@@ -2348,10 +2349,8 @@ button {
 
 .about-cta:hover {
   transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.15) !important;
-  box-shadow: 
-    0 15px 35px rgba(0, 0, 0, 0.4),
-    0 0 25px rgba(255, 255, 255, 0.03);
+  border-color: var(--bg-dark-800) !important;
+  box-shadow: var(--skeuo-bevel-light), var(--skeuo-bevel-dark), 0 15px 35px rgba(0, 0, 0, 0.5) !important;
 }
 
 .about-cta .cta-title,

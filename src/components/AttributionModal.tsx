@@ -12,7 +12,7 @@ export const AttributionModal: React.FC<AttributionModalProps> = ({ onClose }) =
   return (
     <div className="modal-overlay" onClick={onClose} style={{ zIndex: 2000 }} data-lenis-prevent>
       <div 
-        className="modal-content glass-panel neon-border attribution-modal-content"
+        className="modal-content neon-border attribution-modal-content"
         onClick={(e) => e.stopPropagation()}
         style={{ 
           maxWidth: '800px', 
@@ -64,14 +64,13 @@ export const AttributionModal: React.FC<AttributionModalProps> = ({ onClose }) =
           </p>
 
           <div 
-            className="glass-panel" 
+            className="skeuo-inset" 
             style={{ 
               marginTop: 20, 
               marginBottom: 20, 
               padding: '16px 20px', 
-              background: 'rgba(244, 63, 94, 0.02)', 
-              borderColor: 'rgba(244, 63, 94, 0.15)',
-              borderRadius: '10px' 
+              borderRadius: '10px',
+              borderLeft: '3px solid var(--accent-rose)'
             }}
           >
             <p style={{ margin: 0, color: 'var(--text-primary)', fontWeight: 600 }}>
@@ -99,7 +98,7 @@ export const AttributionModal: React.FC<AttributionModalProps> = ({ onClose }) =
             If you are a trademark owner or authorized representative and believe that any content on FindAI inaccurately represents your product, improperly attributes intellectual property, or otherwise raises concerns regarding your rights, please contact us at:
           </p>
 
-          <div style={{ marginTop: 12, background: 'rgba(255, 255, 255, 0.015)', border: '1px solid var(--glass-border)', padding: '16px 20px', borderRadius: '10px', display: 'inline-block' }}>
+          <div className="skeuo-inset" style={{ marginTop: 12, padding: '16px 20px', borderRadius: '10px', display: 'inline-block' }}>
             <span>Email: </span><a href="mailto:support@findai.store" style={{ color: 'var(--primary)', fontWeight: 600 }}>legal@findai.store</a>
           </div>
 

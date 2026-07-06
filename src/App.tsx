@@ -970,8 +970,10 @@ function App() {
       />
 
       {/* Immersive Footer */}
-      <footer className="footer">
-        <div className="container">
+      <footer className="footer" style={{ position: 'relative' }}>
+        <div className="skeuo-screw" style={{ left: '20px', top: '20px' }} />
+        <div className="skeuo-screw" style={{ right: '20px', top: '20px' }} />
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div className="footer-grid">
             <div className="footer-brand">
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>

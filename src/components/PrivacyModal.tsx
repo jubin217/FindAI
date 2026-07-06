@@ -12,7 +12,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ onClose }) => {
   return (
     <div className="modal-overlay" onClick={onClose} style={{ zIndex: 2000 }} data-lenis-prevent>
       <div 
-        className="modal-content glass-panel neon-border privacy-modal-content"
+        className="modal-content neon-border privacy-modal-content"
         onClick={(e) => e.stopPropagation()}
         style={{ 
           maxWidth: '800px', 
@@ -281,7 +281,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ onClose }) => {
           <section style={{ marginBottom: 10 }}>
             <h3 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem', fontWeight: 600, marginBottom: 12 }}>15. Contact Us</h3>
             <p>If you have any questions, requests, or concerns regarding this Privacy Policy or our privacy practices, please contact us at:</p>
-            <div style={{ marginTop: 10, background: 'rgba(255, 255, 255, 0.015)', border: '1px solid var(--glass-border)', padding: '16px 20px', borderRadius: '10px', display: 'inline-block' }}>
+            <div className="skeuo-inset" style={{ marginTop: 10, padding: '16px 20px', borderRadius: '10px', display: 'inline-block' }}>
               <strong style={{ color: 'var(--text-primary)', display: 'block', marginBottom: 4 }}>FindAI</strong>
               <span>Website: </span><a href="https://findai.store" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-primary)', textDecoration: 'underline' }}>https://findai.store</a><br />
               <span>Email: </span><a href="mailto:support@findai.store" style={{ color: 'var(--primary)', fontWeight: 600 }}>support@findai.store</a>
