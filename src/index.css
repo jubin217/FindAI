@@ -2383,7 +2383,7 @@ button {
   font-family: var(--font-heading);
   font-size: 2.2rem;
   font-weight: 700;
-  color: white;
+  color: var(--text-primary);
   margin-bottom: 12px;
 }
 
